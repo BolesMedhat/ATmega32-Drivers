@@ -128,14 +128,14 @@ ATmega32/
    git clone https://github.com/BolesMedhat/ATmega32-Drivers.git
    ```
 
-2. **Add the `ATmega32/` folder to your AVR project:**
+2. **Add the `HAL/`, `MCAL/`, and `LIB/` folders to your AVR project:**
    Include the following folders:
 
    ```
-   ATmega32/
-   ├── HAL/
-   ├── MCAL/
-   └── LIB/
+   HAL/
+   MCAL/
+   LIB/
+   main.c
    ```
 
 3. **Remove unused drivers** (optional but recommended):  
