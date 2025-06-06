@@ -145,15 +145,15 @@ ATmega32/
 4. **Include required driver headers in your code:**
 
    ```c
-   #include "ATmega32/HAL/LCD/LCD.h"
+   #include "HAL/LCD/LCD.h"
    ```
 
 5. **Configure peripherals (if applicable):**  
    Some drivers include a `*_config.h` file for setting pins, modes, resolutions, and interrupts.
    Edit the configuration as needed:
 
+   Example: LCD_config.h
    ```c
-   // Example: LCD_config.h
    #define LCD_MODE        LCD_4_BIT
    #define LCD_DATA_PORT   DIO_PORTA
    ```
