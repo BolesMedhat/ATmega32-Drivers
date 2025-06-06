@@ -103,7 +103,7 @@ ATmega32/
 * **Modular and Lightweight**
 
   * Each driver is self-contained, with minimal dependencies
-  * No use of `<stdio.h>` or built-in libraries
+  * **No use of** `<stdio.h>`, `<stdlib.h>`, or other standard C/AVR libraries — ensuring maximum portability and reduced overhead
 
 * **Polling and Interrupt-Based Support**
 
