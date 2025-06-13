@@ -70,21 +70,23 @@ ATmega32/
 │   └── USONIC/        # Ultrasonic Sensor (HC-SR04, supports multiple units)
 │
 ├── MCAL/              # Microcontroller Abstraction Layer
-│   ├── ADC/           # Analog-to-Digital Converter
 │   ├── DIO/           # Digital I/O Port Control
-│   ├── EEPROM/        # Internal EEPROM
+│   ├── ADC/           # Analog-to-Digital Converter
+│   ├── GIE/           # Global Interrupt Enable
 │   ├── EXTI/          # External Interrupts
+│   ├── EEPROM/        # Internal EEPROM
+│   ├── UART/          # Serial Communication
 │   ├── I2C/           # I2C/TWI Interface (Master/Slave)
 │   ├── SPI/           # SPI Communication
 │   ├── TIMER0/        # 8-bit Timer/Counter0 (PWM Support)
 │   ├── TIMER1/        # 16-bit Timer/Counter1 (PWM/ICU Support)
 │   ├── TIMER2/        # 8-bit Timer/Counter2 (PWM Support)
-│   ├── UART/          # Serial Communication
-│   └── WDT/           # Watchdog Timer
+│   ├── WDT/           # Watchdog Timer
+│   └── AC/            # Analog Comparator
 │
 └── LIB/               # Common Utility Libraries
     ├── BIT_MATH/      # Bit Manipulation Macros (SET_BIT, CLR_BIT, etc.)
-    ├── DataConvert/   # Data Conversion Functions (e.g., BCD, ASCII, HEX)
+    ├── DataConvert/   # Data Conversion Functions (e.g., ftoa, itoa, dtoh)
     ├── MAPPING/       # Value Scaling and Mapping Utilities
     └── STD_TYPES/     # Standardized Data Type Definitions
 ```
