@@ -1,7 +1,7 @@
 /****************************************************************************
  * @file	DataConvert.h
  * @author  Boles Medhat
- * @brief   Data Conversion Utility Functions (int ↔ string, float ↔ string)
+ * @brief   Data Conversion Utility Functions
  * @version 1.0
  * @date	[2025-01-15]
  * @license MIT License Copyright (c) 2025 Boles Medhat
