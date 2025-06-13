@@ -11,12 +11,6 @@
  * to ASCII string and vice versa. Designed for embedded systems (AVR) without
  * relying on heavy standard libraries like stdio.h or stdlib.h.
  *
- * Functions included:
- * - itoa_simple(int, char*, int)
- * - atoi_simple(const char*)
- * - ftoa(float, char*, int)
- * - atof_simple(const char*)
- *
  *
  * @contact
  * LinkedIn : https://www.linkedin.com/in/boles-medhat
