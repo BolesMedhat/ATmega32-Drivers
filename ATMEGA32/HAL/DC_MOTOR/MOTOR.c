@@ -117,17 +117,17 @@ void MOTOR_Stop( Motor motor )
  *
  * Configures the control pins of the left and right motors to drive them forward.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_BothForward( Motor Right_motor , Motor left_motor )
+void MOTOR_BothForward( Motor right_motor , Motor left_motor )
 {
 
 	/* Make the LEFT DC MOTOR Move Forward */
 	MOTOR_Forward( left_motor );
 
 	/* Make the RIGHT DC MOTOR Move Forward */
-	MOTOR_Forward( Right_motor );
+	MOTOR_Forward( right_motor );
 }
 
 
@@ -139,17 +139,17 @@ void MOTOR_BothForward( Motor Right_motor , Motor left_motor )
  *
  * Configures the control pins of the left and right motors to drive them in reverse.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_BothBackward( Motor Right_motor , Motor left_motor )
+void MOTOR_BothBackward( Motor right_motor , Motor left_motor )
 {
 
 	/* Make the LEFT DC MOTOR Move Backward */
 	MOTOR_Backward( left_motor );
 
 	/* Make the RIGHT DC MOTOR Move Backward */
-	MOTOR_Backward( Right_motor );
+	MOTOR_Backward( right_motor );
 }
 
 
@@ -161,17 +161,17 @@ void MOTOR_BothBackward( Motor Right_motor , Motor left_motor )
  *
  * Configures the control pins of the left and right motors to stop their movement.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_BothStop( Motor Right_motor , Motor left_motor )
+void MOTOR_BothStop( Motor right_motor , Motor left_motor )
 {
 
 	/* Make the LEFT DC MOTOR Stop Moving */
 	MOTOR_Stop( left_motor );
 
 	/* Make the RIGHT DC MOTOR Stop Moving */
-	MOTOR_Stop( Right_motor );
+	MOTOR_Stop( right_motor );
 
 }
 
@@ -184,10 +184,10 @@ void MOTOR_BothStop( Motor Right_motor , Motor left_motor )
  *
  * Configures the motors based on the steering mode to achieve a right turn.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_TurnRight( Motor Right_motor , Motor left_motor )
+void MOTOR_TurnRight( Motor right_motor , Motor left_motor )
 {
 
 	/* Make the LEFT DC MOTOR Move Forward */
@@ -196,12 +196,12 @@ void MOTOR_TurnRight( Motor Right_motor , Motor left_motor )
 	#if		MOTOR_STEERING_MODE == MOTOR_STOP_ON_TURN
 
 		/* Make the RIGHT DC MOTOR Stop Moving */
-		MOTOR_Stop( Right_motor );
+		MOTOR_Stop( right_motor );
 
 	#elif	MOTOR_STEERING_MODE == MOTOR_REVERSE_ON_TURN
 
 		/* Make the RIGHT DC MOTOR Move Backward */
-		MOTOR_Backward( Right_motor );
+		MOTOR_Backward( right_motor );
 
 	#else
 		/* Make an Error */
@@ -219,14 +219,14 @@ void MOTOR_TurnRight( Motor Right_motor , Motor left_motor )
  *
  * Configures the motors based on the steering mode to achieve a left turn.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_TurnLeft( Motor Right_motor , Motor left_motor )
+void MOTOR_TurnLeft( Motor right_motor , Motor left_motor )
 {
 
 	/* Make the RIGHT DC MOTOR Move Forward */
-	MOTOR_Forward( Right_motor );
+	MOTOR_Forward( right_motor );
 
 	#if		MOTOR_STEERING_MODE == MOTOR_STOP_ON_TURN
 
@@ -254,8 +254,8 @@ void MOTOR_TurnLeft( Motor Right_motor , Motor left_motor )
  *
  * Controls the motors to move forward, backward, stop, or turn based on the `MOTOR_Direction` parameter.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  * @param Direction:   Direction for the motors to move. Possible values:
  *        - `MOTOR_FORWARD` to move forward,
  *        - `MOTOR_BACKWARD` to move backward,
@@ -263,35 +263,35 @@ void MOTOR_TurnLeft( Motor Right_motor , Motor left_motor )
  *        - `MOTOR_TURN_RIGHT` to turn right,
  *        - `MOTOR_TURN_LEFT` to turn left.
  */
-void MOTOR_SET_Direction( Motor Right_motor , Motor left_motor , uint8 Direction )
+void MOTOR_SET_Direction( Motor right_motor , Motor left_motor , uint8 Direction )
 {
 
 	/* Check on MOTOR Direction */
 	if(Direction == MOTOR_FORWARD)
 	{
 		/* Make the Two DC MOTOR Move Forward */
-		MOTOR_BothForward( Right_motor , left_motor );
+		MOTOR_BothForward( right_motor , left_motor );
 
 	}
 	else if(Direction == MOTOR_BACKWARD)
 	{
 		/* Make the Two DC MOTOR Move Backward */
-		MOTOR_BothBackward( Right_motor , left_motor );
+		MOTOR_BothBackward( right_motor , left_motor );
 	}
 	else if(Direction == MOTOR_TURN_RIGHT)
 	{
 		/* Control the Two DC MOTOR to Make them Move Right */
-		MOTOR_TurnRight( Right_motor , left_motor );
+		MOTOR_TurnRight( right_motor , left_motor );
 	}
 	else if(Direction == MOTOR_TURN_LEFT)
 	{
 		/* Control the Two DC MOTOR to Make them Move Left */
-		MOTOR_TurnLeft( Right_motor , left_motor );
+		MOTOR_TurnLeft( right_motor , left_motor );
 	}
 	else //(Direction == MOTOR_STOP)
 	{
 		/* Make the Two DC MOTOR Stop Moving */
-		MOTOR_BothStop( Right_motor , left_motor );
+		MOTOR_BothStop( right_motor , left_motor );
 	}
 
 }
