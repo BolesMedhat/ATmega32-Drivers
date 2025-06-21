@@ -38,7 +38,7 @@
  * the distance in centimeters.
  *
  * @param usonic   A structure of type `Usonic` containing:
- *                 - port_id:  Port connected to the ultrasonic sensor trigger and echo pins
+ *                 - port:  Port connected to the ultrasonic sensor trigger and echo pins
  *                 - trig_pin: Pin ID for the trigger signal
  *                 - echo_pin: Pin ID for the echo signal
  *
@@ -51,26 +51,26 @@ uint16 USONIC_Read( Usonic usonic )
 	uint32 pulse_width = 0;
 
 	/* Set TRIG pin as output to send trigger signal */
-	DIO_SetPinDirection( usonic.port_id , usonic.trig_pin , OUTPUT );
+	DIO_SetPinDirection( usonic.port , usonic.trig_pin , OUTPUT );
 
 	/* Set ECHO pin as input to receive echo signal */
-	DIO_SetPinDirection( usonic.port_id , usonic.echo_pin , INPUT );
+	DIO_SetPinDirection( usonic.port , usonic.echo_pin , INPUT );
 
 	 /* Send trigger pulse: HIGH for 10us */
-	DIO_SetPinValue( usonic.port_id , usonic.trig_pin , HIGH );
+	DIO_SetPinValue( usonic.port , usonic.trig_pin , HIGH );
 	_delay_us(10);
 
 	 /* End trigger pulse */
-	DIO_SetPinValue( usonic.port_id , usonic.trig_pin , LOW );
+	DIO_SetPinValue( usonic.port , usonic.trig_pin , LOW );
 
 	/* Wait until ECHO pin goes HIGH (start of echo pulse) */
-	while( DIO_GetPinValue( usonic.port_id , usonic.echo_pin ) == LOW );
+	while( DIO_GetPinValue( usonic.port , usonic.echo_pin ) == LOW );
 
 	 /* Capture timer value at the start of pulse */
 	start_time = TIMER1_GetTimerValue();
 
 	/* Wait until ECHO pin goes LOW (end of echo pulse) */
-	while( DIO_GetPinValue( usonic.port_id , usonic.echo_pin ) == HIGH );
+	while( DIO_GetPinValue( usonic.port , usonic.echo_pin ) == HIGH );
 
 	/* Capture timer value at the end of pulse */
 	end_time = TIMER1_GetTimerValue();
