@@ -65,7 +65,7 @@ uint8 SERVO_Init( uint8 port_id , uint8 pin_id );
  * The angle must be within the valid range of 0 to 180 degrees.
  *
  * @param servo_id: The unique ID of the servo to be controlled.
- * @param angle:    The desired angle for the servo (in degrees).
+ * @param angle:    The desired angle for the servo (0 to 180).
  */
 void SERVO_SetAngleByID( uint8 servo_id , uint8 angle );
 
@@ -78,7 +78,7 @@ void SERVO_SetAngleByID( uint8 servo_id , uint8 angle );
  *
  * @param port_id:  The port on which the servo is connected.
  * @param pin_id:   The pin on the specified port for controlling the servo.
- * @param angle:    The desired angle for the servo (in degrees).
+ * @param angle:    The desired angle for the servo (0 to 180).
  */
 void SERVO_SetAngleByPin( uint8 port_id , uint8 pin_id , uint8 angle );
 
