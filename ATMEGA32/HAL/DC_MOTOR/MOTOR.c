@@ -36,7 +36,7 @@
  *
  * @param motor: a `Motor` structure containing the motor's port and pin information.
  */
-void DC_MOTOR_Init( Motor motor )
+void MOTOR_Init( Motor motor )
 {
 
 	/* Set the First Pin Direction as Output */
