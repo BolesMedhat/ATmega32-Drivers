@@ -33,9 +33,9 @@
 /*Usonic type for use in function parameter*/
 typedef struct
 {
-	uint8 port_id  : 2;		/*Select port_id  from [  PORTB_ID  , PORTB_ID , PORTC_ID , PORTD_ID ]*/
-	uint8 echo_pin : 3;		/*Select echo_pin from [ PIN0_ID to PIN7_ID ]*/
-	uint8 trig_pin : 3;		/*Select trig_pin from [ PIN0_ID to PIN7_ID ]*/
+	uint8 port     : 2;		/*Select port  from [ DIO_PORTA  , DIO_PORTB , DIO_PORTC , DIO_PORTD ]*/
+	uint8 echo_pin : 3;		/*Select echo_pin from [ DIO_PIN0 to DIO_PIN7 ]*/
+	uint8 trig_pin : 3;		/*Select trig_pin from [ DIO_PIN0 to DIO_PIN7 ]*/
 }Usonic;
 /*_______________________________________________________________________________________________*/
 
