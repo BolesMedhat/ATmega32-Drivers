@@ -501,7 +501,7 @@ void TIMER2_Calc_ISR_Timing_ms( uint16 milliseconds, uint16 * requiredOverflows,
  * This function sets a user-defined callback function to be called
  * when the specified Timer2 (OVF,or COMP) interrupt occurs.
  *
- * @example TIMER2_SetCallback( TIMER2_OVF_ID , & TIMER2_OVF_Interrupt_Function );
+ * @example TIMER2_SetCallback( TIMER2_OVF_ID , TIMER2_OVF_Interrupt_Function );
  *
  * @param interrupt_id: The interrupt ID (TIMER2_OVF_ID, TIMER2_COMP_ID).
  * @param CopyFuncPtr:  Pointer to the callback function. The function should have a
@@ -582,6 +582,6 @@ void __vector_5 (void)
 		g_TIMER2_Overflow++;
 	#endif
 }
-/*___________________________________________________________________________________________________*/
+
 
 
