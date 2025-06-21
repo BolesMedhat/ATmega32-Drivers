@@ -38,7 +38,7 @@
  * the distance in centimeters.
  *
  * @param usonic   A structure of type `Usonic` containing:
- *                 - port_id:  Port connected to the ultrasonic sensor trigger and echo pins
+ *                 - port:     Port connected to the ultrasonic sensor trigger and echo pins
  *                 - trig_pin: Pin ID for the trigger signal
  *                 - echo_pin: Pin ID for the echo signal
  *
