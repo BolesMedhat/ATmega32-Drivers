@@ -80,10 +80,10 @@ void MOTOR_Stop( Motor motor );
  *
  * Configures the control pins of the left and right motors to drive them forward.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_BothForward( Motor Right_motor , Motor Left_Motor );
+void MOTOR_BothForward( Motor right_motor , Motor left_motor );
 
 
 /*
@@ -91,10 +91,10 @@ void MOTOR_BothForward( Motor Right_motor , Motor Left_Motor );
  *
  * Configures the control pins of the left and right motors to drive them in reverse.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_BothBackward( Motor Right_motor , Motor Left_Motor );
+void MOTOR_BothBackward( Motor right_motor , Motor left_motor );
 
 
 /*
@@ -102,10 +102,10 @@ void MOTOR_BothBackward( Motor Right_motor , Motor Left_Motor );
  *
  * Configures the control pins of the left and right motors to stop their movement.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_BothStop( Motor Right_motor , Motor Left_Motor );
+void MOTOR_BothStop( Motor right_motor , Motor left_motor );
 
 
 /*
@@ -113,10 +113,10 @@ void MOTOR_BothStop( Motor Right_motor , Motor Left_Motor );
  *
  * Configures the motors based on the steering mode to achieve a right turn.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_TurnRight( Motor Right_motor , Motor Left_Motor );
+void MOTOR_TurnRight( Motor right_motor , Motor left_motor );
 
 
 /*
@@ -124,10 +124,10 @@ void MOTOR_TurnRight( Motor Right_motor , Motor Left_Motor );
  *
  * Configures the motors based on the steering mode to achieve a left turn.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  */
-void MOTOR_TurnLeft( Motor Right_motor , Motor Left_Motor );
+void MOTOR_TurnLeft( Motor right_motor , Motor left_motor );
 
 
 /*
@@ -135,8 +135,8 @@ void MOTOR_TurnLeft( Motor Right_motor , Motor Left_Motor );
  *
  * Controls the motors to move forward, backward, stop, or turn based on the `MOTOR_Direction` parameter.
  *
- * @param Right_motor: a `Motor` structure for the right motor's port and pin information.
- * @param Left_Motor:  a `Motor` structure for the left motor's port and pin information.
+ * @param right_motor: a `Motor` structure for the right motor's port and pin information.
+ * @param left_motor:  a `Motor` structure for the left motor's port and pin information.
  * @param Direction:   Direction for the motors to move. Possible values:
  *        - `MOTOR_FORWARD` to move forward,
  *        - `MOTOR_BACKWARD` to move backward,
@@ -144,7 +144,7 @@ void MOTOR_TurnLeft( Motor Right_motor , Motor Left_Motor );
  *        - `MOTOR_TURN_RIGHT` to turn right,
  *        - `MOTOR_TURN_LEFT` to turn left.
  */
-void MOTOR_SET_Direction( Motor Right_motor , Motor Left_Motor , uint8 Direction );
+void MOTOR_SET_Direction( Motor right_motor , Motor left_motor , uint8 Direction );
 
 
 #endif /* MOTOR_H_ */
