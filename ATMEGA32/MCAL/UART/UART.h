@@ -224,7 +224,7 @@ uint8 UART_ReadtheNinthBit( void );
  * when the UART transmission is complete.
  * It also loads the first byte to start transmission and initializes internal buffers.
  *
- * @example UART_Set_TX_Callback( & TX_Interrupt_Function , TX_String , TX_StringLength );
+ * @example UART_Set_TX_Callback( TX_Interrupt_Function , TX_String , TX_StringLength );
  *
  * @param CopyFuncPtr:  Pointer to the callback function. The function should have a
  * 							void return type and no parameters.
@@ -241,7 +241,7 @@ void UART_Set_TX_Callback ( void (*CopyFuncPtr)(void) , uint8 * TX_Array , uint1
  * when the UART reception is complete (by size) or a stop byte is received.
  * It also stores a buffer to hold received data and store the stop byte that terminates reception.
  *
- * @example UART_Set_RX_Callback( & RX_Interrupt_Function , RX_String , 99999 , '\0' );
+ * @example UART_Set_RX_Callback( RX_Interrupt_Function , RX_String , 100 , '\0' );
  *
  * @param CopyFuncPtr:  Pointer to the callback function. The function should have a
  * 							void return type and no parameters.
