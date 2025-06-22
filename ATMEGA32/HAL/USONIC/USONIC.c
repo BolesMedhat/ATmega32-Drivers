@@ -86,18 +86,35 @@ uint16 USONIC_Read( Usonic usonic )
 	else
 	{
 		/* Pulse_width = (timer overflow value)- start time +  end time (timer overflow) */
-		#if		TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_CTC_OCR1A_MODE
+		#if		TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_CTC_OCR1A_MODE || \
+				TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_FAST_PWM_OCR1A_MODE
 
 				pulse_width = ((TIMER1_GetCompare_A_Value() + 1) - start_time) + end_time;
 
-		#elif	TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_CTC_ICR1_MODE
+		#elif	TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_FAST_PWM_8BIT_MODE
+
+				pulse_width = (256UL - start_time) + end_time;
+
+		#elif	TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_FAST_PWM_9BIT_MODE
+
+				pulse_width = (512UL - start_time) + end_time;
+
+		#elif	TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_FAST_PWM_10BIT_MODE
+
+				pulse_width = (1024UL - start_time) + end_time;
+
+		#elif	TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_CTC_ICR1_MODE || \
+				TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_FAST_PWM_ICR1_MODE
 
 				pulse_width = ((ICU_GetICUvalue() + 1) - start_time) + end_time;
 
-		#else
+		#elif	TIMER1_WAVEFORM_GENERATION_MODE == TIMER1_NORMAL_MODE
 
 				pulse_width = (65536UL  - start_time) + end_time;
 
+		#else
+			/* Make an Error */
+			#error "TIMER1 mode can not work with the Ultrasonic"
 		#endif
 	}
 
