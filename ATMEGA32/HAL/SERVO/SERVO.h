@@ -55,7 +55,7 @@
  * @return:     The assigned servo ID if initialization is successful,
  *                 or 0xFF if there are too many servos already initialized.
  */
-uint8 SERVO_Init( uint8 port , uint8 pin )
+uint8 SERVO_Init( uint8 port , uint8 pin );
 
 
 /*
