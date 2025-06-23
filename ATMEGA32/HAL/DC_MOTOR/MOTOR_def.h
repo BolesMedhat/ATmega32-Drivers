@@ -30,9 +30,9 @@
 /*Moteor type for use in function parameter*/
 typedef struct
 {
-	uint8 MOTOR_PORT : 2;	/*Select MOTOR_PORT from [ DIO_PORTA , DIO_PORTB , DIO_PORTC , DIO_PORTD ]*/
-	uint8 FIRST_PIN  : 3;	/*Select FIRST_PIN  from [ DIO_PIN0 to DIO_PIN7 ]*/
-	uint8 SECOND_PIN : 3;	/*Select SECOND_PIN from [ DIO_PIN0 to DIO_PIN7 ]*/
+	uint8 motor_port : 2;	/*Select MOTOR_PORT from [ DIO_PORTA , DIO_PORTB , DIO_PORTC , DIO_PORTD ]*/
+	uint8 first_pin  : 3;	/*Select FIRST_PIN  from [ DIO_PIN0 to DIO_PIN7 ]*/
+	uint8 second_pin : 3;	/*Select SECOND_PIN from [ DIO_PIN0 to DIO_PIN7 ]*/
 }Motor;
 /*_______________________________________________________________________________________________*/
 
