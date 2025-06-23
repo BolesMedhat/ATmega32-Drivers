@@ -184,6 +184,11 @@ MIT License © 2025 Boles Medhat
 Free to use, modify, and distribute for personal or commercial use with attribution.
 
 ---
+## 👨‍💻 Author
+
+**Poles Medhat** – Embedded Systems Developer
+
+---
 
 
 
