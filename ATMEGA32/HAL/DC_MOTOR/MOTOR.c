@@ -40,10 +40,10 @@ void MOTOR_Init( Motor motor )
 {
 
 	/* Set the First Pin Direction as Output */
-	DIO_SetPinDirection( motor.MOTOR_PORT , motor.FIRST_PIN , OUTPUT );
+	DIO_SetPinDirection( motor.motor_port , motor.first_pin , OUTPUT );
 
 	/* Set the Second Pin Direction as Output */
-	DIO_SetPinDirection( motor.MOTOR_PORT , motor.SECOND_PIN , OUTPUT );
+	DIO_SetPinDirection( motor.motor_port , motor.second_pin , OUTPUT );
 }
 
 
@@ -61,10 +61,10 @@ void MOTOR_Forward( Motor motor )
 {
 
 	/* set the First Pin as High Value */
-	DIO_SetPinValue( motor.MOTOR_PORT , motor.FIRST_PIN , HIGH );
+	DIO_SetPinValue( motor.motor_port , motor.first_pin , HIGH );
 
 	/* set the Second Pin as Low Value */
-	DIO_SetPinValue( motor.MOTOR_PORT , motor.SECOND_PIN , LOW );
+	DIO_SetPinValue( motor.motor_port , motor.second_pin , LOW );
 }
 
 
@@ -82,10 +82,10 @@ void MOTOR_Backward( Motor motor )
 {
 
 	/* set the First Pin as Low Value */
-	DIO_SetPinValue( motor.MOTOR_PORT , motor.FIRST_PIN , LOW );
+	DIO_SetPinValue( motor.motor_port , motor.first_pin , LOW );
 
 	/* set the Second Pin as High Value */
-	DIO_SetPinValue( motor.MOTOR_PORT , motor.SECOND_PIN , HIGH );
+	DIO_SetPinValue( motor.motor_port , motor.second_pin , HIGH );
 }
 
 
@@ -103,10 +103,10 @@ void MOTOR_Stop( Motor motor )
 {
 
 	/* set the First Pin as Low Value */
-	DIO_SetPinValue( motor.MOTOR_PORT , motor.FIRST_PIN , LOW );
+	DIO_SetPinValue( motor.motor_port , motor.first_pin , LOW );
 
 	/* set the Second Pin as Low Value */
-	DIO_SetPinValue( motor.MOTOR_PORT , motor.SECOND_PIN , LOW );
+	DIO_SetPinValue( motor.motor_port , motor.second_pin , LOW );
 }
 
 
