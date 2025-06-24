@@ -187,6 +187,9 @@ Free to use, modify, and distribute for personal or commercial use with attribut
 ## 👨‍💻 Author
 
 **Poles Medhat** – Embedded Systems Developer
+**Contact**:  
+[LinkedIn](https://www.linkedin.com/in/boles-medhat) | 
+[GitHub](https://github.com/BolesMedhat)
 
 ---
 
