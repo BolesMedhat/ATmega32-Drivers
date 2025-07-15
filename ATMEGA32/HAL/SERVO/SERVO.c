@@ -65,19 +65,18 @@ static void SERVO_Interrupt( void )
 	{
 		/* Set the Corresponding Servo Pin to LOW to Complete the Previous pulse */
 		DIO_SetPinValue( servos[ servo_id ].port , servos[ servo_id ].pin , LOW );
+		
+		/* Move to the Next Servo */
+		servo_id++;
 	}
 	else
 	{
 		/* Reset the Timer1 if All Servos have been Processed (to Start New Pulse for Eath Servo) */
 		TIMER1_SetTimerValue( 0 );
 
-		/* Reset the Servo ID to Start From the First Servo Again (After Increment in Next Line) */
-		servo_id = 0xFF;
+		/* Reset the Servo ID to Start From the First Servo Again */
+		servo_id = 0;
 	}
-
-
-	/* Move to the Next Servo */
-	servo_id++;
 
 
 	 /* Check if the New Servo ID is Still valid */
